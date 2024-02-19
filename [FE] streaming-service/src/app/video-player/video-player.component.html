@@ -1,0 +1,26 @@
+<div class="video-container">
+  <video
+    #videoPlayer
+    id="my-player"
+    class="video-js"
+    controls
+    preload="auto"
+    poster="../../assets/CM-logo.png"
+    data-setup="{}"
+  >
+    <source
+      src="{{ videoUrl }}{{ videoId }}_{{ defaultAudioTrack }}"
+      type="video/mp4"
+    />
+  </video>
+
+  <div class="controls-container">
+    <p>Audio Tracks</p>
+    <select (change)="changeAudioTrack($event)" class="audio-select">
+      <option *ngFor="let track of audioTracks" [value]="track">
+        {{ track }}
+      </option>
+    </select>
+    <!-- You can add more controls here as needed -->
+  </div>
+</div>
