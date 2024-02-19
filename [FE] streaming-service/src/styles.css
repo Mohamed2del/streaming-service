@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+  body {
+    overflow-x: hidden;
+    background: #fff;
+    background-image: radial-gradient(#999 5%, transparent 0);
+    background-size: 35px 35px; 
+  }

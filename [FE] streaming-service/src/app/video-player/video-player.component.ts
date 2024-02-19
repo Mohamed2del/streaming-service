@@ -1,7 +1,10 @@
-import { Component  ,OnInit,ElementRef,ViewChild, Input} from '@angular/core';
+import { Component  ,OnInit,ElementRef,ViewChild,Renderer2, Input} from '@angular/core';
 import videojs from 'video.js';
 import { SubtitleService } from 'src/service/SubtitleService';
 import { AudioService } from 'src/service/AudioService';
+
+require('@silvermine/videojs-chromecast')(videojs); // THIS FAILS IN ANGULAR 13.X, but not 12.X
+import '@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css';
 
 @Component({
   selector: 'app-video-player',
@@ -12,7 +15,33 @@ export class VideoPlayerComponent implements OnInit   {
 
   @ViewChild('videoPlayer') videoPlayer!: ElementRef;
 
-  constructor(private subtitleService: SubtitleService, private audioService:AudioService) {
+  options = {
+    liveui: true,
+    techOrder: ['chromecast', 'html5'],
+      plugins: { // UNCOMMENT THIS BLOCK FOR CHROMECAST
+        chromecast: {
+          receiverAppID: '1234', // Not required
+          addButtonToControlBar: true, // Defaults to true
+          // code for receiver app ID etc goes here
+        },
+      },
+      chromecast: {
+        requestTitleFn: () => {
+          return 'title';
+        },
+        requestSubtitleFn: () => {
+          return 'subtitle';
+        },
+        requestCustomDataFn: () => {
+          // project specific things
+        },
+      },
+      
+  };
+
+  player:any
+
+  constructor(private subtitleService: SubtitleService, private audioService:AudioService,private renderer: Renderer2) {
    }
 
 
@@ -22,11 +51,16 @@ export class VideoPlayerComponent implements OnInit   {
   audioTracks:string[]=[];
   subtitleLoaded:boolean=false;
   ngAfterViewInit(): void {
+    this.player = videojs(this.videoPlayer.nativeElement,this.options);
     this.initPlayer()
+
+    setTimeout(() => {
+      let chromecastButton = document.querySelector(".vjs-chromecast-button")?.classList.remove('vjs-hidden')
+        
+    }, 1000); // waits 1 second before running the code inside the timeout
   }
 
   ngOnInit() {
-
     this.loadAudioToPlayer();
 
   }
@@ -50,18 +84,18 @@ export class VideoPlayerComponent implements OnInit   {
   }
   
   initPlayer(): void {
+    
     // Ensure the player element, defaultAudioTrack, and videoId are available
     if (this.videoPlayer && this.defaultAudioTrack && this.videoId) {
-      const player = videojs(this.videoPlayer.nativeElement);
+      
       // Set up player source with the default audio track
-      player.src({
+      this.player.src({
         src: `${this.videoUrl}${this.videoId}_${this.defaultAudioTrack}`,
         type: 'video/mp4',
       });
-      player.load();
-      console.log("call B")
-
-      this.loadSubtitlesToPlayer(player);
+      this.player.load();
+      console.log(this.player)
+      this.loadSubtitlesToPlayer(this.player);
     }
   }
   
@@ -79,14 +113,13 @@ export class VideoPlayerComponent implements OnInit   {
       console.warn('No audio track selected');
     }
 
-    const player = videojs(this.videoPlayer.nativeElement);
-    player.src({
+    this.player.src({
       src: `${this.videoUrl}${this.videoId}_${this.defaultAudioTrack}`,
       type: 'video/mp4',
     });
     console.log("call A")
-    this.loadSubtitlesToPlayer(player);
-    player.play();
+    this.loadSubtitlesToPlayer(this.player);
+    this.player.play();
   }
 
   loadSubtitlesToPlayer(player:any) : void{

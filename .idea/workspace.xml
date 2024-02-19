@@ -5,21 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a77b0a91-1bd4-43df-b685-9f73bd5f150e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/libx264" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Controller/AudioController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Controller/PreProcessingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Controller/SubtitleController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Controller/VideoStreamingController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Services/AudioService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Services/PreProcessingService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/Services/SubtitleService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/StreamingServiceApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/javaservices/streamingservice/models/StreamInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[BE] streaming-service/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/[BE] streaming-service/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[BE] streaming-service/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[BE] streaming-service/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[BE] streaming-service/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[BE] streaming-service/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/[FE] streaming-service/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/[FE] streaming-service/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[FE] streaming-service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/[FE] streaming-service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[FE] streaming-service/src/app/video-player/video-player.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/[FE] streaming-service/src/app/video-player/video-player.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/[FE] streaming-service/src/app/video-player/video-player.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/[FE] streaming-service/src/app/video-player/video-player.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,20 +86,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ToolWindowDebug.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Banana/university&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ToolWindowDebug.ShowToolbar": "false",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/desk top/streaming-service/streaming-service/[BE] streaming-service",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\desk top\streaming-service\streaming-service\src\main\resources\video" />
@@ -119,19 +115,27 @@
       <command value="gradle --refresh-dependencies" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.StreamingServiceApplication">
-    <configuration name="StreamingServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="javaservices.streamingservice.StreamingServiceApplication" />
-      <module name="streaming-service.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="javaservices.streamingservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="Gradle.streaming-service [bootWar]">
+    <configuration name="streaming-service [bootJar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootJar" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="streaming-service [bootWar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -175,7 +179,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="streaming-service [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="streaming-service [jar]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -186,7 +190,7 @@
         </option>
         <option name="taskNames">
           <list>
-            <option value="clean" />
+            <option value="jar" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -225,11 +229,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StreamingServiceApplication" />
-        <item itemvalue="Gradle.streaming-service [build]" />
-        <item itemvalue="Gradle.streaming-service [clean]" />
-        <item itemvalue="Gradle.streaming-service" />
         <item itemvalue="Gradle.streaming-service [bootWar]" />
+        <item itemvalue="Gradle.streaming-service [bootJar]" />
+        <item itemvalue="Gradle.streaming-service [jar]" />
+        <item itemvalue="Gradle.streaming-service" />
+        <item itemvalue="Gradle.streaming-service [build]" />
       </list>
     </recent_temporary>
   </component>

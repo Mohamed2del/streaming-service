@@ -29,13 +29,11 @@ public class PreProcessingController {
     @Value("${original.videos.directory.path}")
     private String originalVideosPath;
 
-    @Value("${processed.videos.directory.path}")
-    private String processedVideosPath;
+
 
     @PostMapping("/upload")
     public Mono<String> uploadPlus(@RequestPart("file") FilePart filePart) {
         String filePath = originalVideosPath + filePart.filename();
-        String targetPath = processedVideosPath + filePart.filename();
         Path path = Paths.get(filePath);
 
         // Log and release each DataBuffer after writing
