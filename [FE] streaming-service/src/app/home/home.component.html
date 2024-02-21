@@ -1,0 +1,26 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+</style>
+
+<div class="form">
+  <h1>Welcome to CM</h1>
+  <div class="container">
+    <div class="cta-form">
+      <h2>Please enter the video id</h2>
+      <p>This is a demo for CM Streaming Service</p>
+    </div>
+    <form action="" class="form">
+      <input
+        type="text"
+        [(ngModel)]="videoId"
+        (keyup.enter)="navigateToVideo()"
+        class="form__input"
+        placeholder="Name"
+        name="name"
+        id="name"
+        required
+      />
+      <label for="name" class="form__label">Video Id</label>
+    </form>
+  </div>
+</div>

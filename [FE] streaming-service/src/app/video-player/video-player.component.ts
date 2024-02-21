@@ -1,7 +1,8 @@
-import { Component  ,OnInit,ElementRef,ViewChild,Renderer2, Input} from '@angular/core';
+import { Component  ,OnInit,ElementRef,ViewChild} from '@angular/core';
 import videojs from 'video.js';
 import { SubtitleService } from 'src/service/SubtitleService';
 import { AudioService } from 'src/service/AudioService';
+import { ActivatedRoute } from '@angular/router'; 
 
 require('@silvermine/videojs-chromecast')(videojs); // THIS FAILS IN ANGULAR 13.X, but not 12.X
 import '@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css';
@@ -40,12 +41,15 @@ export class VideoPlayerComponent implements OnInit   {
   };
 
   player:any
+  videoLoadError = false;
 
-  constructor(private subtitleService: SubtitleService, private audioService:AudioService,private renderer: Renderer2) {
+  constructor(private subtitleService: SubtitleService, 
+    private audioService:AudioService,  
+      private route: ActivatedRoute) {
    }
 
-
-  videoId = "1"
+  
+  videoId:string="";
   defaultAudioTrack=""
   videoUrl = "http://www.localhost:8080/videos/"
   audioTracks:string[]=[];
@@ -55,15 +59,23 @@ export class VideoPlayerComponent implements OnInit   {
     this.initPlayer()
 
     setTimeout(() => {
-      let chromecastButton = document.querySelector(".vjs-chromecast-button")?.classList.remove('vjs-hidden')
-        
+    document.querySelector(".vjs-chromecast-button")?.classList.remove('vjs-hidden') 
     }, 1000); // waits 1 second before running the code inside the timeout
+  const videoElement: HTMLVideoElement = this.videoPlayer.nativeElement;
+  videoElement.addEventListener('error', this.handleVideoError.bind(this));
+  videoElement.src = 'invalid-video-url';
   }
 
   ngOnInit() {
-    this.loadAudioToPlayer();
-
-  }
+    this.route.paramMap.subscribe(params => {
+      const videoIdParam = params.get('videoId');
+    if (videoIdParam !== null) {
+      this.videoId = videoIdParam;
+    }
+    });
+  console.log("videoId"+this.videoId)
+  this.loadAudioToPlayer();
+}
   
   loadAudioToPlayer(): void {
     // Ensure videoId is not null
@@ -94,11 +106,19 @@ export class VideoPlayerComponent implements OnInit   {
         type: 'video/mp4',
       });
       this.player.load();
-      console.log(this.player)
       this.loadSubtitlesToPlayer(this.player);
     }
   }
   
+  // Method to handle video loading errors
+handleVideoError(event: Event): void {
+  // Handle the error here
+  console.error('Error loading video:', event);
+  // Display an error message to the user
+  // For example, you can set a flag to display an error message in the template
+  this.videoLoadError = true;
+}
+
   changeAudioTrack(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
 

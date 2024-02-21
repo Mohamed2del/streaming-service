@@ -23,8 +23,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
-
+              "src/styles.css",
+              "./node_modules/video.js/dist/video-js.css",
+              "./node_modules/@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css"
             ],
             "scripts": [
             ]

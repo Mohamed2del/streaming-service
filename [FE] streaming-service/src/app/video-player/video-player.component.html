@@ -15,13 +15,12 @@
     data-setup="{}"
   ></video>
 
-  <div class="controls-container">
+  <div *ngIf="!videoLoadError" class="controls-container">
     <p class="label">Audio Tracks</p>
     <select (change)="changeAudioTrack($event)" class="audio-select">
       <option *ngFor="let track of audioTracks" [value]="track">
         {{ track }}
       </option>
     </select>
-    <!-- You can add more controls here as needed -->
   </div>
 </div>

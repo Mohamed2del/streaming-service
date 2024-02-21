@@ -1,66 +1,64 @@
 @import '../../../node_modules/video.js/dist/video-js.css';
 
-  .video-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0px;
-   border-radius: 10px;
-  }
-  
-  .video-js {
-    border-radius: 8px !important;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
-  }
-  .video-js .vjs-control-bar {
-    background-color: #ffeb3b;
-    color: #ff0000;
-  }
-  
+.video-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px;
+  border-radius: 10px;
+}
 
-  .controls-container {
-    margin-top: 20px;
-  }
-  
-  .audio-select {
-    padding: 10px;
-    margin-top: 0px;
-    background-color: #ffffff;
-    min-width: 150px;
-    border-radius: 5px;
-    color: #000;
-    font-weight: 300;
-    font-size: 1rem;
-  }
-  
+.video-js {
+  border-radius: 8px !important;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
 
-  .audio-select::-ms-expand {
-    display: none;
-  }
-
-  .label{
-    background-image: linear-gradient(45deg, #676312, #3c005c);
-   background-clip: text;
-    font-weight: 800;
-    margin-bottom: 5px;
-    font-size: 1.5rem;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-text-fill-color: transparent;
-  }
-  
-  .audio-select::after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0 15px;
-    background: #000;
-    cursor: pointer;
-    pointer-events: none;
-    transition: 0.25s all ease;
-  }
+.video-js .vjs-control-bar {
+  background-color: #ffeb3b;
+  color: #ff0000;
+}
 
 
-  
+.controls-container {
+  margin-top: 20px;
+}
+
+.audio-select {
+  padding: 10px;
+  margin-top: 0px;
+  background-color: #ffffff;
+  min-width: 150px;
+  border-radius: 5px;
+  color: #000;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+
+.audio-select::-ms-expand {
+  display: none;
+}
+
+.label {
+  background-image: linear-gradient(45deg, #676312, #3c005c);
+  background-clip: text;
+  font-weight: 800;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.audio-select::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 15px;
+  background: #000;
+  cursor: pointer;
+  pointer-events: none;
+  transition: 0.25s all ease;
+}
