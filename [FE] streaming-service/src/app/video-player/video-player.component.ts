@@ -21,20 +21,18 @@ export class VideoPlayerComponent implements OnInit   {
     techOrder: ['chromecast', 'html5'],
       plugins: { // UNCOMMENT THIS BLOCK FOR CHROMECAST
         chromecast: {
-          receiverAppID: '1234', // Not required
-          addButtonToControlBar: true, // Defaults to true
-          // code for receiver app ID etc goes here
+          addButtonToControlBar: true, 
         },
       },
       chromecast: {
         requestTitleFn: () => {
-          return 'title';
+          return this.videoId;
         },
         requestSubtitleFn: () => {
-          return 'subtitle';
+          return this.defaultAudioTrack;
         },
         requestCustomDataFn: () => {
-          // project specific things
+          return `${this.videoUrl}${this.videoId}_${this.defaultAudioTrack}`
         },
       },
       
@@ -96,26 +94,19 @@ export class VideoPlayerComponent implements OnInit   {
   }
   
   initPlayer(): void {
-    
-    // Ensure the player element, defaultAudioTrack, and videoId are available
     if (this.videoPlayer && this.defaultAudioTrack && this.videoId) {
-      
-      // Set up player source with the default audio track
       this.player.src({
         src: `${this.videoUrl}${this.videoId}_${this.defaultAudioTrack}`,
         type: 'video/mp4',
       });
       this.player.load();
+      this.player.chromecast();
       this.loadSubtitlesToPlayer(this.player);
     }
   }
   
-  // Method to handle video loading errors
 handleVideoError(event: Event): void {
-  // Handle the error here
   console.error('Error loading video:', event);
-  // Display an error message to the user
-  // For example, you can set a flag to display an error message in the template
   this.videoLoadError = true;
 }
 
@@ -137,7 +128,6 @@ handleVideoError(event: Event): void {
       src: `${this.videoUrl}${this.videoId}_${this.defaultAudioTrack}`,
       type: 'video/mp4',
     });
-    console.log("call A")
     this.loadSubtitlesToPlayer(this.player);
     this.player.play();
   }
