@@ -53,7 +53,8 @@ export class VideoPlayerComponent implements OnInit   {
   audioTracks:string[]=[];
   subtitleLoaded:boolean=false;
   ngAfterViewInit(): void {
-    this.player = videojs(this.videoPlayer.nativeElement,this.options);
+    this.player = videojs(document.getElementById('my-player')!, this.options);
+    
     this.initPlayer()
 
     setTimeout(() => {
