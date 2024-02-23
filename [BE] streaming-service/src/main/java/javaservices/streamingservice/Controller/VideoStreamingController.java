@@ -20,7 +20,7 @@ import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-@CrossOrigin(origins = "http://localhost:4200") // Replace with your Angular app's domain
+@CrossOrigin
 @RestController
 public class VideoStreamingController {
 
