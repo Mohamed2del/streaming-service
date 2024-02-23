@@ -25,7 +25,8 @@
             "styles": [
               "src/styles.css",
               "./node_modules/video.js/dist/video-js.css",
-              "./node_modules/@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css"
+              "./node_modules/@silvermine/videojs-chromecast/dist/silvermine-videojs-chromecast.css",
+              "https://cdn.jsdelivr.net/npm/@silvermine/videojs-chromecast@1.1.0/dist/silvermine-videojs-chromecast.css"
             ],
             "scripts": [
               {
