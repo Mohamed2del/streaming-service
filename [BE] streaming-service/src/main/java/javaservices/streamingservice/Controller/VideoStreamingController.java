@@ -34,7 +34,7 @@ public class VideoStreamingController {
         Path path = Paths.get(videoPath, filename + ".mp4");
         DataBufferFactory bufferFactory = new DefaultDataBufferFactory();
         HttpHeaders headers = new HttpHeaders();
-        long chunksServed = 0;
+        System.out.println("Streaming");
         return Mono.fromCallable(() -> {
             FileChannel channel = FileChannel.open(path, StandardOpenOption.READ);
             long contentLength = channel.size();
@@ -43,6 +43,12 @@ public class VideoStreamingController {
 
             // Default range is the full video
             final long[] range = new long[]{0, contentLength - 1};
+            System.out.println("=====Request Info===");
+            System.out.println(exchange.getRequest().getLocalAddress());
+            System.out.println(exchange.getRequest().getPath());
+            System.out.println(exchange.getRequest().getRemoteAddress());
+            System.out.println(exchange.getRequest().getSslInfo());
+            System.out.println("=======================");
 
             String rangeHeader = exchange.getRequest().getHeaders().getFirst("Range");
             if (rangeHeader != null && rangeHeader.startsWith("bytes=")) {
