@@ -103,6 +103,25 @@ export class VideoPlayerComponent implements OnInit   {
       this.player.load();
       this.player.chromecast();
       this.loadSubtitlesToPlayer(this.player);
+
+          // Adding Chromecast event listeners
+    this.player.on('chromecastConnected', () => {
+      console.log('Chromecast Session Connected', this.player);
+    });
+
+    this.player.on('chromecastDisconnected', () => {
+      console.log('Chromecast Session Disconnected', this.player);
+    });
+
+    this.player.on('error', (error:any) => {
+      console.error('Player Error', error);
+    });
+    
+    // Assuming the Chromecast plugin emits specific error events
+    this.player.on('chromecastError', (error:any) => {
+      console.error('Chromecast Error', error);
+    });
+
     }
   }
   

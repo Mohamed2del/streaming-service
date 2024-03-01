@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
-*{
+* {
     font-family: "Inter", sans-serif;
 }
-.header{
+
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,11 +14,10 @@
     height: 20dvh;
 }
 
-.header > img {
+.header>img {
     object-fit: cover;
     width: 230px;
     height: 239px;
+    border-radius: 50%;
     image-rendering: optimizeQuality;
 }
-
-
