@@ -48,7 +48,7 @@ export class VideoPlayerComponent implements OnInit   {
 
   
   videoId:string="";
-  defaultAudioTrack="english"
+  defaultAudioTrack=""
   videoUrl = "http://68.10.187.106:8123/videos/"
   audioTracks:string[]=[];
   subtitleLoaded:boolean=false;
@@ -59,7 +59,7 @@ export class VideoPlayerComponent implements OnInit   {
 
     setTimeout(() => {
     document.querySelector(".vjs-chromecast-button")?.classList.remove('vjs-hidden') 
-    }, 1000); // waits 1 second before running the code inside the timeout
+    }, 2000); // waits 1 second before running the code inside the timeout
   const videoElement: HTMLVideoElement = this.videoPlayer.nativeElement;
   videoElement.addEventListener('error', this.handleVideoError.bind(this));
   videoElement.src = 'invalid-video-url';
@@ -73,7 +73,7 @@ export class VideoPlayerComponent implements OnInit   {
     }
     });
   console.log("videoId"+this.videoId)
-  // this.loadAudioToPlayer();
+  this.loadAudioToPlayer();
 }
   
   loadAudioToPlayer(): void {
@@ -102,7 +102,7 @@ export class VideoPlayerComponent implements OnInit   {
       });
       this.player.load();
       this.player.chromecast();
-      // this.loadSubtitlesToPlayer(this.player);
+      this.loadSubtitlesToPlayer(this.player);
 
           // Adding Chromecast event listeners
     this.player.on('chromecastConnected', () => {

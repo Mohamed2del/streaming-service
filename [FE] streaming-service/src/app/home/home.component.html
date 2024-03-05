@@ -15,6 +15,7 @@
         type="text"
         [(ngModel)]="videoId"
         (keyup.enter)="navigateToVideo()"
+        (touchend)="navigateToVideo()"
         class="form__input"
         placeholder="Name"
         name="name"
