@@ -27,7 +27,7 @@ public class VideoStreamingController {
     @Value("${original.videos.directory.path}")
     private String videoPath;
 
-    private static final long MAX_CHUNK_SIZE = 1024 * 1024; // 1MB
+    private static final long MAX_CHUNK_SIZE = 131073;
 
     @GetMapping("/videos/{filename}")
     public Mono<ResponseEntity<Flux<DataBuffer>>> streamVideo(@PathVariable String filename, ServerWebExchange exchange) {
