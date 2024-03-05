@@ -20,7 +20,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import org.springframework.core.io.buffer.DataBufferUtils;
 
-@CrossOrigin(origins = "http://localhost:4200") // Replace with your Angular app's domain
+@CrossOrigin // Replace with your Angular app's domain
 @RestController
 public class PreProcessingController {
 

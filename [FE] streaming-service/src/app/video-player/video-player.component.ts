@@ -48,8 +48,8 @@ export class VideoPlayerComponent implements OnInit   {
 
   
   videoId:string="";
-  defaultAudioTrack=""
-  videoUrl = "http://www.localhost:8080/videos/"
+  defaultAudioTrack="english"
+  videoUrl = "http://68.10.187.106:8123/videos/"
   audioTracks:string[]=[];
   subtitleLoaded:boolean=false;
   ngAfterViewInit(): void {
@@ -73,7 +73,7 @@ export class VideoPlayerComponent implements OnInit   {
     }
     });
   console.log("videoId"+this.videoId)
-  this.loadAudioToPlayer();
+  // this.loadAudioToPlayer();
 }
   
   loadAudioToPlayer(): void {
@@ -102,7 +102,7 @@ export class VideoPlayerComponent implements OnInit   {
       });
       this.player.load();
       this.player.chromecast();
-      this.loadSubtitlesToPlayer(this.player);
+      // this.loadSubtitlesToPlayer(this.player);
 
           // Adding Chromecast event listeners
     this.player.on('chromecastConnected', () => {

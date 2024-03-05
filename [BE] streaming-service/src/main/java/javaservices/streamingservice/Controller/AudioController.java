@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200") // Replace with your Angular app's domain
-
+@CrossOrigin
 public class AudioController {
 
     @Autowired

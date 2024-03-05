@@ -9,7 +9,7 @@ export class AudioService {
   constructor(private http: HttpClient) {}
 
   fetchAudioTracks(videoId: string): Observable<string[]> {
-    return this.http.get<string[]>(`http://localhost:8080/audio/${videoId}/languages`);
+    return this.http.get<string[]>(`http://68.10.187.106:8123/audio/${videoId}/languages`);
   }
 
 }
